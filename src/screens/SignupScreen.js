@@ -10,7 +10,7 @@ import * as yup from "yup"
 import { useState } from "react";
 import FastImage from 'react-native-fast-image';
 import { AppIcon, AppStyles } from "../utils/AppStyles";
-
+import FormTextInput from "../components/FormTextInput";
 const SignUpScreen = ({ navigation }) => {
 
   const validationSchema = yup.object().shape({
@@ -39,35 +39,8 @@ const SignUpScreen = ({ navigation }) => {
         <Text style={{ fontSize: 30, textAlign: 'left', fontWeight: 700, color: '#000' }}>Create account</Text>
         <Text style={{ fontSize: 18, textAlign: 'left', color: '#888' }}>Please fill the given details</Text>
       </View>
-      <Controller
-        name="name"
-        control={control}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder="Name"
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-      />
-      {errors?.name && <Text style={{ paddingTop: 0, paddingBottom: 15, color: 'red', textAlign: 'left', justifyContent: 'flex-start', width: '100%' }}>{errors?.name?.message}</Text>}
-
-      <Controller
-        name="email"
-        control={control}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-      />
-      {errors?.email && <Text style={{ paddingTop: 0, paddingBottom: 15, color: 'red', textAlign: 'left', justifyContent: 'flex-start', width: '100%' }}>{errors?.email?.message}</Text>}
+      <FormTextInput control={control} name='name' label={'Name'} errors={errors} />
+      <FormTextInput control={control} name='email' label={'Email'} errors={errors} />
 
       <Controller
         name="age"
@@ -117,26 +90,7 @@ const SignUpScreen = ({ navigation }) => {
           <Text style={{ fontSize: 18 }}>Non-binary</Text>
         </View>
       </View>
-
-      <Controller
-        name="password"
-        control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-            secureTextEntry={true}
-          />
-        )}
-      />
-      {errors?.password && <Text style={{ paddingTop: 0, paddingBottom: 15, color: 'red', textAlign: 'left', justifyContent: 'flex-start', width: '100%' }}>{errors?.password?.message}</Text>}
-
+      <FormTextInput control={control} name='password' label={'Password'} errors={errors} password={true} />
       <Button mode="contained" style={{ width: '100%', paddingVertical: 8, borderRadius: 8, fontSize: 18, backgroundColor: '#ee502c' }} onPress={handleSubmit(onSubmit)}>
         Sign Up
       </Button>
@@ -145,7 +99,7 @@ const SignUpScreen = ({ navigation }) => {
         Already have an account?   {' '}
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate('LoginScreen');
           }}
         >
           <Text style={{ color: '#ee502c' }}>Login</Text>

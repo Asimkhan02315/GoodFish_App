@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export * from './DrawerContainer';
 export * from './FormDateInput';
 export * from './FormDropdown';
@@ -10,4 +11,3 @@ export * from './InputLabelView';
 export * from './LoadingContainer';
 export * from './MenuButton';
 export * from './NoData';
-export * from './SearchBox';

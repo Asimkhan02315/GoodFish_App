@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
-import {TouchableOpacity, Image} from 'react-native';
-import {AppIcon} from '../utils/AppStyles';
+import { TouchableOpacity, Image } from 'react-native';
+import { AppIcon } from '../utils/AppStyles';
 
 export default function HeaderButton(props) {
   return (

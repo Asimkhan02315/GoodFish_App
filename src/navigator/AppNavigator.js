@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,7 +8,7 @@ import LoginScreen from '../screens/LoginScreen';
 
 const AppNavigator = () => {
 
-    const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
