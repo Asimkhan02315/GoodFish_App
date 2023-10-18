@@ -29,8 +29,9 @@ const LoginScreen = ({ navigation }) => {
 
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
-    const onSubmit = () => {
-
+    const onSubmit = (data) => {
+        console.log(data, "form data ");
+        navigation.navigate('DrawerStack');
     };
 
     return (
@@ -63,7 +64,7 @@ const LoginScreen = ({ navigation }) => {
                     <TouchableOpacity
                         style={{ padding: 0 }}
                         onPress={() => {
-                            navigation.navigate('SignupScreen');
+                            navigation.navigate('DrawerStack');
                         }}
                     >
                         <Text style={{ color: '#ee502c', }}>Signup</Text>
