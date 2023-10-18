@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MenuButton from './MenuButton';
 import { AppIcon } from '../utils/AppStyles';
-// import { connect } from 'react-redux';
-// import { logoutSuccess } from '../redux/actions/authActions';
+import { connect } from 'react-redux';
+import { login } from '../redux/reducers/authReducers';
 // import { authService } from '../utils/_services';
 import { Text } from 'react-native-paper';
 import FastImage from 'react-native-fast-image';
@@ -17,16 +17,17 @@ function DrawerContainer({ navigation, auth, logout }) {
   const [active, setActive] = useState(0);
   const handleLogout = () => {
     // const { token } = auth;
+    console.log(auth)
     // authService.logout(token).then(res => {
     //   console.log(res);
     // }).catch(error => {
     //   console.log(error)
     // })
-    // navigation.navigate('LoginStack')
-    // setTimeout(() => {
-    //   logout();
-    // }, 1500);
     navigation.navigate('LoginScreen')
+    setTimeout(() => {
+      logout();
+    }, 1500);
+    // navigation.navigate('LoginScreen')
   };
 
   return (
@@ -36,7 +37,7 @@ function DrawerContainer({ navigation, auth, logout }) {
           style={{ width: 70, height: 70 }}
           source={AppIcon.images.logo}
         />
-        <Text style={{ color: '#fff' }} variant="headlineMedium"> Good Fish</Text>
+        <Text style={{ color: '#fff' }} variant="headlineMedium">Good Fish</Text>
       </View>
       <View style={styles.container}>
         <MenuButton
@@ -91,14 +92,14 @@ const styles = StyleSheet.create({
   },
 });
 
-// const mapStateToProps = (state) => ({
-//   auth: state.auth
-// });
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-//   logout: () => dispatch(logoutSuccess()),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(login()),
+});
 
-// export default connect(mapStateToProps, mapDispatchToProps)(DrawerContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DrawerContainer);
 
-export default DrawerContainer
+// export default DrawerContainer
