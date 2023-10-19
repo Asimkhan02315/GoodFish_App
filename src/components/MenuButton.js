@@ -3,7 +3,8 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import {AppStyles} from '../utils/AppStyles';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+import { Icon } from 'react-native-paper';
 
 export default function MenuButton(props) {
   const { active, icon, onPress, title } = props; 
@@ -14,7 +15,7 @@ export default function MenuButton(props) {
       underlayColor="rgba(128, 128, 128, 0.1)">
       <View style={styles.btnContainer}>
         <Icon
-          name={icon}
+          source={icon}
           color={active ? AppStyles.color.tint : AppStyles.color.white}
           size={25}
         />

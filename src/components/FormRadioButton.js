@@ -21,7 +21,7 @@ const FormRadioButtons = ({ control, name, label, options, defaultValue, errors 
                     </View>
                     <View style={styles.radioButtonRow}>
                         {options.slice(2).map((option) => (
-                            <RadioButton.Item key={option.value} label={option.label} status={value === option.value ? 'checked' : 'unchecked'} value={option.value} onPress={() => onChange(option.value)} />
+                            <RadioButton.Item key={option.value} label={option.label}  status={value === option.value ? 'checked' : 'unchecked'} value={option.value} onPress={() => onChange(option.value)} />
                         ))}
                     </View>
                     {error && <HelperText type="error" visible={true}>{error.message}</HelperText>}

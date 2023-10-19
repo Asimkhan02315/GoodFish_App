@@ -34,12 +34,12 @@ function DrawerContainer({ navigation, auth, logout }) {
       <View style={[styles.view, { backgroundColor: '#201f2b' }]}>
         <FastImage
           style={{ width: 70, height: 70 }}
-          source={AppIcon.images.logo}
+          source={AppIcon.images.logo}         
         />
-        <Text style={{ color: '#fff' }} variant="headlineMedium"> Good Fish</Text>
+        <Text style={{ color: '#fff' }} variant="headlineMedium">Good Fish</Text>
       </View>
       <View style={styles.container}>
-        <MenuButton
+        {/* <MenuButton
           title="Home"
           icon='home'
           active={active === 0 ? true : false}
@@ -47,20 +47,101 @@ function DrawerContainer({ navigation, auth, logout }) {
             setActive(0);
             navigation.navigate('Tab');
           }}
-        />
+        /> */}
         <MenuButton
-          title="Archive Booking"
-          icon='book'
+          title="Daily Bubble"
+          icon='chart-bubble'
           active={active === 1 ? true : false}
           onPress={() => {
             setActive(1);
-            navigation.navigate('ArchiveBookingStack');
+            navigation.navigate('DailyBubble');
+          }}
+        />
+
+        <MenuButton
+          title="Today Response"
+          icon='calendar-today'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('TodayResponse');
+          }}
+        />
+
+        <MenuButton
+          title="Bookmarks"
+          icon='bookmark'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('Bookmarks');
+          }}
+        />
+
+        <MenuButton
+          title="Go Fish"
+          icon='fish'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('GoFish');
+          }}
+        />
+
+        <MenuButton
+          title="My Fish Pond"
+          icon='fishbowl-outline'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('MyFishPond');
+          }}
+        />
+
+        <MenuButton
+          title="Settings"
+          icon='account-settings'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('Setting');
+          }}
+        />
+
+        <MenuButton
+          title="Feedback"
+          icon='wechat'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('Feedback');
+          }}
+        />
+
+
+        <MenuButton
+          title="Support"
+          icon='account-supervisor'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('Support');
+          }}
+        />
+
+        <MenuButton
+          title="Subscription"
+          icon='youtube-subscription'
+          active={active === 1 ? true : false}
+          onPress={() => {
+            setActive(1);
+            navigation.navigate('Subscription');
           }}
         />
 
         <MenuButton
           title="Logout"
-          icon='power-off'
+          icon='logout'
           active={false}
           onPress={() => {
             handleLogout()

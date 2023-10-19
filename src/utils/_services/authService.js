@@ -6,7 +6,7 @@ export const authService = {
     tokenCheck
     // forgotPass
 };
-const API_URL = 'https://staging.orangemoonsss.com/api/v1'
+const API_URL = 'https://goodfish.com/api/v1'
 async function login(data) {
     return await axios.post(
         `${API_URL}/auth/login`,

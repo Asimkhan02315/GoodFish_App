@@ -27,7 +27,7 @@ const LoginScreen = ({ navigation }) => {
     const formOptions = { resolver: yupResolver(validationSchema), mode: 'onChange' };
     const { control, handleSubmit, formState: { errors } } = useForm(formOptions);
 
-    const [toggleCheckBox, setToggleCheckBox] = useState(false)
+    const [toggleCheckBox, setToggleCheckBox] = useState(false) 
 
     const onSubmit = (data) => {
         console.log(data, "form data ");
@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation }) => {
                     <TouchableOpacity
                         style={{ padding: 0 }}
                         onPress={() => {
-                            navigation.navigate('DrawerStack');
+                            navigation.navigate('SignupScreen');
                         }}
                     >
                         <Text style={{ color: '#ee502c', }}>Signup</Text>
