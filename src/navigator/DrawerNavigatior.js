@@ -12,15 +12,39 @@ import SettingScreen from '../screens/user/SettingScreen';
 import FeedbackScreen from '../screens/user/FeedbackScreen';
 import SupportScreen from '../screens/user/SupportScreen';
 import SubscriptionScreen from '../screens/user/SubscriptionScreen';
-
+import { Icon } from 'react-native-paper';
+import { TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
-
+    const navigation = useNavigation();
 
     return (
-        <Drawer.Navigator  drawerContent={(props) => <DrawerContainer {...props} />} >
+        <Drawer.Navigator
+        screenOptions={{
+            // headerLeft: (props) =>{
+            //     console.log(props)
+            //  },
+           
+            headerRight: (props) => (
+                <>
+                <View style={{gap : 20, flexDirection:'row', marginRight : 10}}>
+                <Icon source='bell' size={30} color='#fff' />
+                <Icon source='account-circle' size={30} color='#fff' />
+                </View>
+                </>
+              ),
+            headerStyle: {
+                backgroundColor: '#1d6495',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+          }} 
+        drawerContent={(props) => <DrawerContainer {...props} />} >
             <Drawer.Screen name='DailyBubble'  component={DailyBubbleScreen} />
             <Drawer.Screen name='TodayResponse' component={TodayResponseScreen} />
             <Drawer.Screen name='Bookmarks' component={BookmarkScreen} />

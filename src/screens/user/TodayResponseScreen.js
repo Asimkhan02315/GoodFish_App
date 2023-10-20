@@ -4,17 +4,17 @@
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { Text } from 'react-native-paper'
-import BubbleSlider from '../../components/BubbleSlider'
+import ResponseCard from '../../components/ResponseCard'
 
 const TodayResponseScreen = () => {
 
   return (
     <>
 
-      <View>
-        <Text style={styles.appHeading}>Today's response</Text>
-        <BubbleSlider />
-      </View>
+      <ResponseCard />
+      <ResponseCard />
+      <ResponseCard />
+      <ResponseCard />
     </>
   )
 }

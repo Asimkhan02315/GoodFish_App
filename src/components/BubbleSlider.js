@@ -1,53 +1,37 @@
 import React from 'react';
-import { View,Dimensions, Text, StyleSheet, Image } from 'react-native';
-// import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { View, Dimensions, Text, StyleSheet, Image } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { Icon } from 'react-native-paper';
 
-const BubbleSlider = ( ) => {
+const BubbleSlider = () => {
+
     const width = Dimensions.get('window').width;
+
     const data = [
-        { key: '1', name: 'Item 1', image: require('../../assets/logo.png'), date: '2023-10-19' },
-        { key: '2', name: 'Item 2', image: require('../../assets/logo.png'), date: '2023-10-18' },
-        { key: '3', name: 'Item 3', image: require('../../assets/logo.png'), date: '2023-10-17' },
+        { key: '1', name: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',},
+        { key: '2', name: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'},
+        { key: '3', name: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',},
     ];
 
-    const carouselRef = React.useRef(null);
-    const [activeSlide, setActiveSlide] = React.useState(0); 
-
     const renderItem = ({ item }) => (
+
         <View style={styles.itemContainer}>
-            <Image source={item.image} style={styles.itemImage} />
             <View style={styles.itemDetails}>
                 <Text style={styles.itemName}>{item.name}</Text>
-                <Text style={styles.itemDate}>Date: {item.date}</Text>
             </View>
-            <Icon color='#f0443c' icon="play-circle" size={40} />
         </View>
     );
 
-    // React.useEffect(() => {
-    //     const autoplayTimer = setInterval(() => {
-    //         if (carouselRef.current) {
-    //             carouselRef.current.snapToNext();
-    //         }
-    //     }, 1000);
-
-    //     return () => {
-    //         clearInterval(autoplayTimer);
-    //     };
-    // }, []);
-
     return (
         <View>
-           <Carousel
+            <Carousel
                 loop={true}
                 mode='parallax'
                 width={width}
                 height={width / 4}
                 autoPlay={false}
                 pagingEnabled={true}
-                autoPlayInterval={2000}
+                autoPlayInterval={1000}
                 data={data}
                 scrollAnimationDuration={1000}
                 onSnapToItem={(index) => console.log('current index:', index)}
@@ -99,7 +83,7 @@ const styles = StyleSheet.create({
         height: 10,
         borderRadius: 5,
         marginHorizontal: 8,
-        marginBottom:0,
+        marginBottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.92)',
     },
 });
