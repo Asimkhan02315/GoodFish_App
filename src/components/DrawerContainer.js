@@ -62,9 +62,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Today Response"
           icon='calendar-today'
-          active={active === 1 ? true : false}
+          active={active === 2 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(2);
             navigation.navigate('TodayResponse');
           }}
         />
@@ -72,9 +72,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Bookmarks"
           icon='bookmark'
-          active={active === 1 ? true : false}
+          active={active === 3 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(3);
             navigation.navigate('Bookmarks');
           }}
         />
@@ -82,9 +82,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Go Fish"
           icon='fish'
-          active={active === 1 ? true : false}
+          active={active === 4 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(4);
             navigation.navigate('GoFish');
           }}
         />
@@ -92,9 +92,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="My Fish Pond"
           icon='fishbowl-outline'
-          active={active === 1 ? true : false}
+          active={active === 5 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(5);
             navigation.navigate('MyFishPond');
           }}
         />
@@ -102,9 +102,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Settings"
           icon='account-settings'
-          active={active === 1 ? true : false}
+          active={active === 6 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(6);
             navigation.navigate('Setting');
           }}
         />
@@ -112,9 +112,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Feedback"
           icon='wechat'
-          active={active === 1 ? true : false}
+          active={active === 7 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(7);
             navigation.navigate('Feedback');
           }}
         />
@@ -123,9 +123,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Support"
           icon='account-supervisor'
-          active={active === 1 ? true : false}
+          active={active === 8 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(8);
             navigation.navigate('Support');
           }}
         />
@@ -133,9 +133,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Subscription"
           icon='youtube-subscription'
-          active={active === 1 ? true : false}
+          active={active === 9 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(9);
             navigation.navigate('Subscription');
           }}
         />

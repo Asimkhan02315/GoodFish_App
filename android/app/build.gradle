@@ -105,6 +105,8 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
+implementation project(':react-native-audio-recorder-player')
+
     implementation("com.facebook.react:react-android")
   implementation project(':react-native-vector-icons')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
@@ -118,6 +120,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

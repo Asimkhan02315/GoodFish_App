@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Bookmarks from '../../components/Bookmarks'
+
 
 const BookmarkScreen = () => {
   return (
     <View>
-      <Text>BookmarkScreen</Text>
+      <Bookmarks />
     </View>
   )
 }

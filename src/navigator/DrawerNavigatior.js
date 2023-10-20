@@ -20,8 +20,8 @@ const DrawerNavigator = () => {
 
 
     return (
-        <Drawer.Navigator drawerContent={(props) => <DrawerContainer {...props} />} >
-            <Drawer.Screen name='DailyBubble' component={DailyBubbleScreen} />
+        <Drawer.Navigator  drawerContent={(props) => <DrawerContainer {...props} />} >
+            <Drawer.Screen name='DailyBubble'  component={DailyBubbleScreen} />
             <Drawer.Screen name='TodayResponse' component={TodayResponseScreen} />
             <Drawer.Screen name='Bookmarks' component={BookmarkScreen} />
             <Drawer.Screen name='GoFish' component={GoFishScreen} />
@@ -29,7 +29,7 @@ const DrawerNavigator = () => {
             <Drawer.Screen name='Setting' component={SettingScreen} />
             <Drawer.Screen name='Feedback' component={FeedbackScreen} />
             <Drawer.Screen name='Support' component={SupportScreen} />
-            <Drawer.Screen name='Subscription' component={SubscriptionScreen} />
+            <Drawer.Screen name='Subscription' component={SubscriptionScreen} /> 
         </Drawer.Navigator>
     )
 }

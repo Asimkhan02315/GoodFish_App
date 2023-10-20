@@ -12,7 +12,13 @@ import FastImage from 'react-native-fast-image';
 import { useState } from "react";
 import { AppIcon, AppStyles } from "../utils/AppStyles";
 import FormTextInput from "../components/FormTextInput";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/reducers/authReducers";
+
+
 const LoginScreen = ({ navigation }) => {
+
+    const dispatch = useDispatch();
 
     const validationSchema = yup.object().shape({
         email: yup.string()
@@ -32,6 +38,7 @@ const LoginScreen = ({ navigation }) => {
     const onSubmit = (data) => {
         console.log(data, "form data ");
         navigation.navigate('DrawerStack');
+        dispatch(login(data.email, data.password));
     };
 
     return (
