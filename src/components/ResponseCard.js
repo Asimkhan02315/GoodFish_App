@@ -1,11 +1,13 @@
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import { Icon } from 'react-native-paper';
 import { AppStyles } from "../utils/AppStyles";
-function ResponseCard(props) {
+function ResponseCard({ cardStyle, }) {
     return (
         <View style={styles.container}>
-            <View style={styles.rect2}>
+            <View style={[styles.rect2, cardStyle]}>
                 <View style={styles.image2Row}>
                     <Image
                         source={require("../../assets/images.jpg")}
@@ -15,7 +17,7 @@ function ResponseCard(props) {
                     <View>
                         <Text style={styles.johnWick2}>John Wick</Text>
                         <Text style={styles.text}>20 oct 2023 | 2:30 min</Text>
-                        <View style={{flexDirection:'row',marginTop:10,gap:10,marginBottom:10}}>
+                        <View style={{ flexDirection: 'row', marginTop: 10, gap: 10, marginBottom: 10 }}>
                             <Icon
                                 source='thumb-up'
                                 color={AppStyles.color.tint}
@@ -67,10 +69,9 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         borderRadius: 15,
         flexDirection: "row",
-        padding:10,
-        flexDirection:'row',
-        alignItems:'center',
-        gap:10
+        padding: 10,
+        alignItems: 'center',
+        gap: 10
     },
     image2: {
         width: 70,
@@ -104,10 +105,10 @@ const styles = StyleSheet.create({
         fontSize: 30,
     },
     image2Row: {
-        height:70,
+        height: 70,
         flexDirection: "row",
         flex: 1,
-        gap:10
+        gap: 10
     }
 });
 

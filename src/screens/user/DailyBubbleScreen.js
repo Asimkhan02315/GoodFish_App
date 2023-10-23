@@ -12,10 +12,10 @@ const DailyBubbleScreen = () => {
         <>
             <ScrollView>
                 <View style={styles.container}>
-                <Text style={styles.Heading}>Good morning, Mark</Text>
-                <View>
-                    <BubbleSlider />
-                </View>
+                    <Text style={styles.Heading}>Good morning, Mark</Text>
+                    <View>
+                        <BubbleSlider />
+                    </View>
                     <View style={styles.micIcon}>
                         <Icon color='#fff'
                             source="microphone"

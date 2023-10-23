@@ -1,6 +1,9 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useCallback } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
+import globalStyles from '../../utils/_css/globalStyle';
+import ParallaxCarousel from '../../components/ParallaxCarousel';
 
 const GoFishScreen = () => {
 
@@ -27,6 +30,12 @@ const GoFishScreen = () => {
     }
   }, []);
 
+  const data = [
+    { title: 'Slide 1' },
+    { title: 'Slide 2' },
+    { title: 'Slide 3' },
+  ];
+
 
   return (
     <View>
@@ -35,8 +44,21 @@ const GoFishScreen = () => {
         title={isRecording ? 'Stop Recording' : 'Start Recording'}
         onPress={isRecording ? stopRecording : startRecording}
       />
+      <View style={globalStyles.cardContainer}>
+
+        <Text> App here </Text>
+      </View>
+      <View style={styles.container}>
+        <ParallaxCarousel />
+      </View>
     </View>
   )
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 
 export default GoFishScreen
