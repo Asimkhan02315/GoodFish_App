@@ -1,39 +1,31 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Controller } from 'react-hook-form';
-import { View, StyleSheet } from 'react-native';
-import { RadioButton, Text, Divider, HelperText } from 'react-native-paper';
+import { useForm, Controller } from 'react-hook-form';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { RadioButton, HelperText } from 'react-native-paper';
 
-const FormRadioButtons = ({ control, name, label, options, defaultValue, errors }) => (
+const FormRadioButtons = ({ control, error, name }) => {
+    return (
+        <View style={{ marginVertical: 8 }}>
+            <Controller
+                control={control}
+                name={name}
+                render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => (
+                    <RadioButton.Group onValueChange={onChange} value={value}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                            <RadioButton.Item label="Male" value="male" color='#ee502c' />
+                            <RadioButton.Item label="Female" value="female" color='#ee502c' />
+                            <RadioButton.Item label="Non-binary" value="nonBinary" color='#ee502c' />
+                        </View>
+                        {error && <HelperText type="error" visible={true}> {error.message}</HelperText>}
+                    </RadioButton.Group>
+                )
+                }
+            />
 
-    <View>
-        <Text>{label} : </Text>
-        <Controller
-            control={control}
-            name={name}
-            defaultValue={defaultValue}
-            render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => (
-                <View>
-                    <View>
-                        {options.slice(0, 2).map((option) => (
-                            <RadioButton.Item key={option.value} label={option.label} status={value === option.value ? 'checked' : 'unchecked'} value={option.value} onPress={() => onChange(option.value)} />
-                        ))}
-                    </View>
-                    <View>
-                        {options.slice(2).map((option) => (
-                            <RadioButton.Item key={option.value} label={option.label} status={value === option.value ? 'checked' : 'unchecked'} value={option.value} onPress={() => onChange(option.value)} />
-                        ))}
-                    </View>
-                    {error && <HelperText type="error" visible={true}>{error.message}</HelperText>}
-                </View>
-            )}
-        />
-        <Divider />
-    </View>
-);
-
-const styles = StyleSheet.create({
-
-});
+        </View >
+    );
+};
 
 export default FormRadioButtons;
+

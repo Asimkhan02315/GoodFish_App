@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
 import globalStyles from '../utils/_css/globalStyle';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Text, HelperText } from 'react-native-paper';
 import { AppStyles } from '../utils/AppStyles';
+import { Icon } from 'react-native-paper';
 const FormTextInput = ({ control, name, label, password, multiline, errors, ...rest }) => {
     const [showPassword, setShowPassword] = useState(false);
     return (
@@ -27,6 +28,21 @@ const FormTextInput = ({ control, name, label, password, multiline, errors, ...r
                                 secureTextEntry={!showPassword}
                             // right={<TextInput.Icon icon={showPassword ? "eye-off" : "eye"} onPress={() => setShowPassword(!showPassword)} />}
                             />
+                            <TouchableOpacity
+                                style={{
+                                    position: 'absolute',
+                                    top: 15,
+                                    right: 15,
+                                    zIndex: 1,
+                                }}
+                                onPress={() => { setShowPassword(!showPassword) }}
+                            >
+                                <Icon
+                                    source={showPassword ? "eye-off" : "eye"}
+                                    color={AppStyles.color.tint}
+                                    size={20}
+                                />
+                            </TouchableOpacity>
                             {error && <HelperText type="error" visible={true}>{error.message}</HelperText>}
                         </>
                     )}

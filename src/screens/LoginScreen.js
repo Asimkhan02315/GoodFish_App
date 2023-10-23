@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
 
-import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image } from "react-native"
+import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native"
 import { useForm, Controller } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
@@ -33,7 +33,8 @@ const LoginScreen = ({ navigation, login }) => {
     };
 
     return (
-        <>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}
+            keyboardShouldPersistTaps="handled">
             <View style={globalStyles.centerContainer}>
                 <View style={globalStyles.containerText}>
                     <FastImage style={styles.logo} source={AppIcon.images.logo} />
@@ -58,7 +59,7 @@ const LoginScreen = ({ navigation, login }) => {
                     </TouchableOpacity>
                 </Text>
             </View>
-        </>
+        </ScrollView>
     )
 }
 
