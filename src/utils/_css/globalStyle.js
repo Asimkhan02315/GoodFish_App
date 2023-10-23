@@ -11,37 +11,29 @@ const globalStyles = StyleSheet.create({
         width: 200,
         height: 200,
     },
-    subtitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: AppStyles.color.title,
-        marginBottom: 5,
-        marginTop: 5
-    },
-    card: {
-        marginVertical: 12,
-        backgroundColor: '#fff',
-    },
-    cardContainer: {
+    centerContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        paddingHorizontal: 20,
-        paddingVertical: 2,
-        marginBottom: Platform.OS === 'android' ? 0 : 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        paddingHorizontal: 20
     },
-    imageRow: {
-        flex: 1,
-        alignItems: 'flex-end',
-        flexDirection: 'row',
-
+    containerText: {
+        marginBottom: 50,
+        textAlign: 'left',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        width: '100%'
     },
-
-    buttonRow: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-
-    },
+    fillButton: {
+        width: '100%',
+        paddingVertical: 8,
+        borderRadius: 8,
+        fontSize: 18,
+        backgroundColor: '#ee502c'
+    }
 });
 
 export default globalStyles;

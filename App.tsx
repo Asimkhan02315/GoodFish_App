@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AppNavigator from "./src/navigator/AppNavigator"
-import { store, persister } from './src/redux/store';
+import { store, persistor } from './src/redux/store';
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persister}>
+        <PersistGate loading={null} persistor={persistor}>
           <AppNavigator />
         </PersistGate>
       </Provider>

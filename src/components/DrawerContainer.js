@@ -3,31 +3,23 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-alert */
 /* eslint-disable prettier/prettier */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MenuButton from './MenuButton';
 import { AppIcon } from '../utils/AppStyles';
 import { connect } from 'react-redux';
-import { login } from '../redux/reducers/authReducers';
-// import { authService } from '../utils/_services';
 import { Text } from 'react-native-paper';
 import FastImage from 'react-native-fast-image';
+import { logoutAction } from '../redux/action/authAction';
 
-function DrawerContainer({ navigation, auth, logout }) {
+function DrawerContainer({ navigation, auth, logoutAuth }) {
   const [active, setActive] = useState(0);
+  console.log(auth)
   const handleLogout = () => {
-    // const { token } = auth;
+    // const { token } = auth;\
+    logoutAuth();
     console.log(auth)
-    // authService.logout(token).then(res => {
-    //   console.log(res);
-    // }).catch(error => {
-    //   console.log(error)
-    // })
     navigation.navigate('LoginScreen')
-    setTimeout(() => {
-      logout();
-    }, 1500);
-    // navigation.navigate('LoginScreen')
   };
 
   return (
@@ -35,26 +27,17 @@ function DrawerContainer({ navigation, auth, logout }) {
       <View style={[styles.view, { backgroundColor: '#201f2b' }]}>
         <FastImage
           style={{ width: 70, height: 70 }}
-          source={AppIcon.images.logo}         
+          source={AppIcon.images.logo}
         />
         <Text style={{ color: '#fff' }} variant="headlineMedium">Good Fish</Text>
       </View>
       <View style={styles.container}>
-        {/* <MenuButton
-          title="Home"
-          icon='home'
-          active={active === 0 ? true : false}
-          onPress={() => {
-            setActive(0);
-            navigation.navigate('Tab');
-          }}
-        /> */}
         <MenuButton
           title="Daily Bubble"
           icon='chart-bubble'
-          active={active === 1 ? true : false}
+          active={active === 0 ? true : false}
           onPress={() => {
-            setActive(1);
+            setActive(0);
             navigation.navigate('DailyBubble');
           }}
         />
@@ -62,9 +45,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Today Response"
           icon='calendar-today'
-          active={active === 2 ? true : false}
+          active={active === 1 ? true : false}
           onPress={() => {
-            setActive(2);
+            setActive(1);
             navigation.navigate('TodayResponse');
           }}
         />
@@ -72,9 +55,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Bookmarks"
           icon='bookmark'
-          active={active === 3 ? true : false}
+          active={active === 2 ? true : false}
           onPress={() => {
-            setActive(3);
+            setActive(2);
             navigation.navigate('Bookmarks');
           }}
         />
@@ -82,9 +65,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Go Fish"
           icon='fish'
-          active={active === 4 ? true : false}
+          active={active === 3 ? true : false}
           onPress={() => {
-            setActive(4);
+            setActive(3);
             navigation.navigate('GoFish');
           }}
         />
@@ -92,9 +75,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="My Fish Pond"
           icon='fishbowl-outline'
-          active={active === 5 ? true : false}
+          active={active === 4 ? true : false}
           onPress={() => {
-            setActive(5);
+            setActive(4);
             navigation.navigate('MyFishPond');
           }}
         />
@@ -102,9 +85,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Settings"
           icon='account-settings'
-          active={active === 6 ? true : false}
+          active={active === 5 ? true : false}
           onPress={() => {
-            setActive(6);
+            setActive(5);
             navigation.navigate('Setting');
           }}
         />
@@ -112,9 +95,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Feedback"
           icon='wechat'
-          active={active === 7 ? true : false}
+          active={active === 6 ? true : false}
           onPress={() => {
-            setActive(7);
+            setActive(6);
             navigation.navigate('Feedback');
           }}
         />
@@ -123,9 +106,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Support"
           icon='account-supervisor'
-          active={active === 8 ? true : false}
+          active={active === 7 ? true : false}
           onPress={() => {
-            setActive(8);
+            setActive(7);
             navigation.navigate('Support');
           }}
         />
@@ -133,9 +116,9 @@ function DrawerContainer({ navigation, auth, logout }) {
         <MenuButton
           title="Subscription"
           icon='youtube-subscription'
-          active={active === 9 ? true : false}
+          active={active === 8 ? true : false}
           onPress={() => {
-            setActive(9);
+            setActive(8);
             navigation.navigate('Subscription');
           }}
         />
@@ -178,7 +161,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(login()),
+  logoutAuth: () => dispatch(logoutAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrawerContainer);

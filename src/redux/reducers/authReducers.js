@@ -1,28 +1,50 @@
 /* eslint-disable prettier/prettier */
 import { createSlice } from '@reduxjs/toolkit'
-
+import {
+    LOGIN_SUCCESS,
+    LOGOUT_SUCCESS,
+    ROUTE_VALUE,
+    UPDATE_PROFILE
+} from '../action/authAction';
 const initialState = {
-    isLogin: false,
+    user: {},
     token: null,
-    user: null,
-}
+    isLogin: false,
+    value: null,
+};
 
-export const authSlice = createSlice({
-    name: 'auth',
-    initialState,
-    reducers: {
-        login: (state, action) => {
-            state.isLogin = true;
-            state.token = action.payload;
-        },
-        logout: (state, action) => {
-            state.isLogin = false;
-            state.token = null;
-        },
-    },
-})
+const authReducer = (state = initialState, action,) => {
+    switch (action.type) {
+        case LOGIN_SUCCESS:
+            return {
+                ...state,
+                isLogin: true,
+                user: action.payload,
+                token: action.token,
+            };
+        case LOGOUT_SUCCESS:
+            return {
+                ...state,
+                isLogin: false,
+                user: null,
+                token: null,
+            };
+        case ROUTE_VALUE:
+            return {
+                ...state,
+                value: action.payload,
+            };
+        case UPDATE_PROFILE:
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    ...action.payload, // Merge updated profile data
+                },
+            };
+        default:
+            return state;
+    }
+};
 
-// Action creators are generated for each case reducer function
-export const { login, logout } = authSlice.actions
-
-export default authSlice.reducer
+export default authReducer;
