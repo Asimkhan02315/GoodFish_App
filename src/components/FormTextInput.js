@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
+import { Button, RadioButton } from 'react-native-paper';
 import globalStyles from '../utils/_css/globalStyle';
 import { View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Text, HelperText } from 'react-native-paper';
 import { AppStyles } from '../utils/AppStyles';
 import { Icon } from 'react-native-paper';
-const FormTextInput = ({ control, name, label, password, multiline, errors, ...rest }) => {
+const FormTextInput = ({ control, name, label, password, multiline, numberOfLines = 1, errors, ...rest }) => {
     const [showPassword, setShowPassword] = useState(false);
     return (
         <View style={styles.detailItem}>
@@ -62,6 +63,7 @@ const FormTextInput = ({ control, name, label, password, multiline, errors, ...r
                                 onChangeText={onChange}
                                 value={value}
                                 multiline={multiline}
+                                numberOfLines={numberOfLines}
                                 {...rest}
                             />
                             {error && <HelperText type="error" visible={true}>{error.message}</HelperText>}

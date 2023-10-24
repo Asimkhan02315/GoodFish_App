@@ -7,8 +7,9 @@ import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
 import DrawerNavigator from './DrawerNavigatior';
 import { useSelector } from 'react-redux';
+import BlockUserScreen from '../screens/user/BlockUserScreen';
 const AppNavigator = () => {
-  const auth = useSelector(state=> state.auth)
+  const auth = useSelector(state => state.auth)
   const Stack = createNativeStackNavigator();
 
   return (
@@ -19,6 +20,7 @@ const AppNavigator = () => {
         }} >
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="BlockUserScreen" component={BlockUserScreen} />
         <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

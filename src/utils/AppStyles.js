@@ -64,11 +64,8 @@ export const AppIcon = {
   },
   images: {
     logo: require('../../assets/logo.png'),
-    // home: require(".././../assets/icons/home.png"),
-    // defaultUser: require(".././../assets/icons/default_user.jpg"),
-    // logout: require(".././../assets/icons/shutdown.png"),
-    // menu: require(".././../assets/icons/menu.png"),
-    // chat: require(".././../assets/icons/chat.png")
+    demoImage: require('../../assets/images.jpg'),
+    wave: require('../../assets/wave.gif'),
   }
 };
 

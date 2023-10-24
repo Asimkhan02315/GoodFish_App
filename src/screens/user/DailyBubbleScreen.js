@@ -6,6 +6,7 @@ import React from 'react'
 import { Icon, Text } from 'react-native-paper'
 import BubbleSlider from '../../components/BubbleSlider'
 import ResponseCard from '../../components/ResponseCard'
+import PlayerCard from '../../components/playerCard'
 const DailyBubbleScreen = () => {
 
     return (
@@ -23,6 +24,7 @@ const DailyBubbleScreen = () => {
                         />
                     </View>
                 </View>
+                <PlayerCard />
                 <View>
                     <Text style={styles.appHeading}>Today's response</Text>
                     {/* <BubbleList /> */}

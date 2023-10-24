@@ -1,13 +1,12 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import Accordion from '../../components/Accordion'
+import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native'
 import globalStyles from '../../utils/_css/globalStyle';
 import React, { useState } from 'react';
 import { AccordionList } from 'accordion-collapse-react-native';
-import { Icon, Divider } from 'react-native-paper';
+import { Divider } from 'react-native-paper';
 import { AppStyles } from '../../utils/AppStyles';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 const SupportScreen = () => {
   const [list, setList] = useState([
     {
@@ -41,8 +40,8 @@ const SupportScreen = () => {
     <View style={styles.header}>
       <Text style={[styles.title, isActive ? { color: '#ff5a66' } : null]}>{item.title}</Text>
       <Icon
-        source={isActive ? 'chevron-up' : 'chevron-down'}
-        size={20}
+        name={isActive ? 'chevron-up' : 'chevron-down'}
+        size={15}
         color={isActive ? '#ff5a66' : "#333"}
       />
     </View>
@@ -55,11 +54,16 @@ const SupportScreen = () => {
   );
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }} >
+    <View contentContainerStyle={{ flexGrow: 1 }} >
       <View style={styles.appContainer}>
-        <View style={{ ...globalStyles.cardContainer, backgroundColor: AppStyles.color.tint, alignItems: 'start' }}>
-          <Text style={{ color: '#fff', fontSize: 17, fontWeight: 600, textAlign: 'left' }}> How can we help you?</Text>
+        <View style={styles.inputContainer}>
+          <Icon name="search" size={20} style={styles.icon} />
+          <TextInput
+            style={styles.input}
+            placeholder="Search"
+          />
         </View>
+
         <AccordionList
           list={list}
           header={_head}
@@ -68,7 +72,7 @@ const SupportScreen = () => {
           expandedIndex={0}
         />
       </View>
-    </ScrollView >
+    </View >
   )
 }
 
@@ -82,9 +86,9 @@ const styles = StyleSheet.create({
       width: 1,
       height: 1
     },
-    elevation: 30,
-    shadowOpacity: 0.19,
-    shadowRadius: 10,
+    elevation: 10,
+    shadowOpacity: 0.10,
+    shadowRadius: 5,
     borderRadius: 15,
     flexDirection: "column",
     padding: 10,
@@ -100,7 +104,32 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 600,
   },
-
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    paddingHorizontal: 10,
+    marginHorizontal: 10,
+    marginBottom: 20,
+    backgroundColor: "rgba(255,255,255,1)",
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      width: 1,
+      height: 1
+    },
+    elevation: 10,
+    shadowOpacity: 0.19,
+    shadowRadius: 10,
+    borderRadius: 30,
+  },
+  icon: {
+    paddingRight: 10,
+  },
+  input: {
+    flex: 1,
+    paddingVertical: 10,
+  },
 })
 
 export default SupportScreen

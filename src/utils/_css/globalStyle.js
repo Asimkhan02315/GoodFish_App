@@ -51,6 +51,30 @@ const globalStyles = StyleSheet.create({
         alignItems: 'center',
         gap: 10,
         marginVertical: 10,
+    },
+    headerContainer: {
+        width: '100%',
+        shadowColor: "rgba(0,0,0,1)",
+        shadowOffset: {
+            width: 1,
+            height: 1
+        },
+        elevation: 30,
+        shadowOpacity: 0.19,
+        shadowRadius: 10,
+        borderRadius: 15,
+        flexDirection: "column",
+        padding: 10,
+        gap: 10,
+        marginVertical: 10,
+        backgroundColor: '#ee502c',
+        alignItems: 'start'
+    },
+    headerText: {
+        color: '#fff',
+        fontSize: 17,
+        fontWeight: 'bold',
+        textAlign: 'left'
     }
 });
 
