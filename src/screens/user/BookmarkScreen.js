@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'left',
     fontSize: 15,
-    backgroundColor: AppStyles.color.tint,
+    backgroundColor: AppStyles.color.primaryColor,
     width: 'auto',
     marginRight: 'auto',
     color: '#fff',

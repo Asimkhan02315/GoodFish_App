@@ -20,20 +20,20 @@ function ResponseCard({ cardStyle, }) {
                         <View style={{ flexDirection: 'row', marginTop: 10, gap: 10, marginBottom: 10 }}>
                             <Icon
                                 source='thumb-up'
-                                color={AppStyles.color.tint}
+                                color={AppStyles.color.primaryColor}
                                 style={styles.icon9}
                                 size={20}
                             />
 
                             <Icon
                                 source='thumb-down'
-                                color={AppStyles.color.tint}
+                                color={AppStyles.color.primaryColor}
                                 style={styles.icon11}
                                 size={20}
                             />
                             <Icon
                                 source='bookmark'
-                                color={AppStyles.color.tint}
+                                color={AppStyles.color.primaryColor}
                                 style={styles.icon12}
                                 size={20}
                             />

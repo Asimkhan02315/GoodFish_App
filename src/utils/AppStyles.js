@@ -59,7 +59,7 @@ export const AppIcon = {
     marginRight: 10
   },
   style: {
-    tintColor: AppStyles.color.tint,
+    tintColor: AppStyles.color.primaryColor,
     width: 25,
     height: 25
   },
@@ -84,7 +84,7 @@ export const HeaderButtonStyle = StyleSheet.create({
     margin: 6
   },
   rightButton: {
-    color: AppStyles.color.tint,
+    color: AppStyles.color.primaryColor,
     marginRight: 10,
     fontWeight: "normal",
   }

@@ -40,7 +40,7 @@ const FormTextInput = ({ control, name, label, password, multiline, numberOfLine
                             >
                                 <Icon
                                     source={showPassword ? "eye-off" : "eye"}
-                                    color={AppStyles.color.tint}
+                                    color={AppStyles.color.primaryColor}
                                     size={20}
                                 />
                             </TouchableOpacity>
