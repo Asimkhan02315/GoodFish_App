@@ -14,7 +14,6 @@ const NotificationScreen = () => {
     return (
         <View contentContainerStyle={{ flexGrow: 1 }} >
             <View style={styles.appContainer}>
-
                 <View style={styles.container}>
                     <View style={styles.rect2}>
                         <View style={styles.image2Row}>

@@ -24,7 +24,7 @@ const SettingScreen = ({ navigation }) => {
             <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color={'#1d6495'} />
           </View>
           <Divider style={{ height: 1 }} />
-          <TouchableOpacity onPress={() => { navigation.navigate('BlockUserScreen') }}>
+          <TouchableOpacity onPress={() => { navigation.navigate('BlockUsers') }}>
             <View style={styles.listView} >
               <Text style={styles.listText}> Block users </Text>
               {/* <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color={'#1d6495'} /> */}

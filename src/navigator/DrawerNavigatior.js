@@ -15,6 +15,7 @@ import FeedbackScreen from '../screens/user/FeedbackScreen';
 import SupportScreen from '../screens/user/SupportScreen';
 import SubscriptionScreen from '../screens/user/SubscriptionScreen';
 import NotificationScreen from '../screens/user/NotificationScreen';
+import ProfileScreen from '../screens/user/ProfileScreen';
 import { Icon } from 'react-native-paper';
 import { TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -33,7 +34,9 @@ const DrawerNavigator = () => {
               <TouchableOpacity onPress={() => { navigation.navigate('Notification') }}>
                 <Icon source='bell' size={30} color='#fff' />
               </TouchableOpacity>
-              <Icon source='account-circle' size={30} color='#fff' />
+              <TouchableOpacity onPress={() => { navigation.navigate('Profile') }}>
+                <Icon source='account-circle' size={30} color='#fff' />
+              </TouchableOpacity>
             </View>
           </>
         ),
@@ -57,6 +60,7 @@ const DrawerNavigator = () => {
       <Drawer.Screen name='Support' component={SupportScreen} />
       <Drawer.Screen name='Subscription' component={SubscriptionScreen} />
       <Drawer.Screen name='Notification' component={NotificationScreen} />
+      <Drawer.Screen name='Profile' component={ProfileScreen} />
     </Drawer.Navigator>
   )
 }

@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 const persistConfig = {
     key: 'GoodFish',
     storage: AsyncStorage,
+    blacklist: ['common']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

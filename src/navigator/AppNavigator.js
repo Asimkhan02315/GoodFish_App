@@ -12,6 +12,18 @@ const AppNavigator = () => {
   const auth = useSelector(state => state.auth)
   const Stack = createNativeStackNavigator();
 
+  const ScreenOptions = {
+    headerShown: true,
+    headerStyle: {
+      backgroundColor: '#1d6495',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    title: 'Block Users'
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={auth?.isLogin ? 'DrawerStack' : 'SignupScreen'}
@@ -20,7 +32,7 @@ const AppNavigator = () => {
         }} >
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="BlockUserScreen" component={BlockUserScreen} />
+        <Stack.Screen options={ScreenOptions} name="BlockUsers" component={BlockUserScreen} />
         <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
