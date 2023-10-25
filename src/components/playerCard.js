@@ -6,10 +6,10 @@ import { Icon } from 'react-native-paper';
 import { AppIcon, AppStyles } from "../utils/AppStyles";
 import FastImage from 'react-native-fast-image';
 
-function PlayerCard() {
+function PlayerCard({ playerStyle }) {
     return (
         <View style={styles.container}>
-            <View style={styles.rect2}>
+            <View style={{ ...styles.rect2, ...playerStyle }}>
                 <View style={styles.image2Row}>
                     <Icon
                         source='play-circle'

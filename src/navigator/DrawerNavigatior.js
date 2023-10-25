@@ -28,6 +28,8 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#000',
         headerRight: (props) => (
           <>
             <View style={{ gap: 20, flexDirection: 'row', marginRight: 10 }}>
